@@ -2,7 +2,7 @@
 
 面向 DeepSeek Harness（DSH）的 Superpowers 技能集合。
 
-本项目基于 obra/superpowers v6.4.1 的技能内容，经过 DSH 专项适配与中文化，提供 15 个可直接加载的技能，包括：
+本项目基于 obra/superpowers v6.4.1 的技能内容，经过 DSH 专项适配与中文化，提供 16 个可直接加载的技能（其中 15 个来自上游，另含 DSH 专项 control-loop），包括：
 
 - brainstorming
 - control-loop
