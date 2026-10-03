@@ -1,0 +1,46 @@
+{
+  "checks": [
+    {
+      "file": "SKILL.md",
+      "snapshotMatches": true,
+      "fencesBalanced": true,
+      "oldMandatesAbsent": true,
+      "hasOutcome": true,
+      "hasBoundary": true,
+      "hasCost": true,
+      "hasRawEvidence": true,
+      "hasCounterexample": true,
+      "hasConflict": true
+    },
+    {
+      "file": "testing-skills-with-subagents.md",
+      "snapshotMatches": true,
+      "fencesBalanced": true,
+      "oldMandatesAbsent": true,
+      "hasOutcome": true,
+      "hasBoundary": true,
+      "hasCost": true,
+      "hasRawEvidence": true,
+      "hasCounterexample": true,
+      "hasConflict": true
+    },
+    {
+      "file": "examples/AGENTS_MD_TESTING.md",
+      "snapshotMatches": true,
+      "fencesBalanced": true,
+      "oldMandatesAbsent": true,
+      "hasOutcome": true,
+      "hasBoundary": true,
+      "hasCost": true,
+      "hasRawEvidence": true,
+      "hasCounterexample": true,
+      "hasConflict": true
+    }
+  ],
+  "promptChecks": {
+    "sameTaskAndSuffix": true,
+    "samePrefix": true
+  },
+  "links": "已用 glob 确认 testing-skills-with-subagents.md 与 examples/AGENTS_MD_TESTING.md 存在；主文与参考链接对应有效相对路径。",
+  "scope": "静态内容、版本及对照输入核验，不是行为改善证明。"
+}

@@ -1,122 +1,43 @@
-# 纵深防御式校验
+# 按失败路径放置防护
 
-## 概述
+## 原则
 
-当你修复了一个由非法数据引起的 bug，在一个地方加上校验会让人感觉已经够了。但这一处检查可能被不同的代码路径、重构或 mock 绕过。
+修复根因，再把必要防护放到负责该失败的边界。多层防护适用于独立信任边界、可绕过入口的真实调用路径，或明确的安全/数据完整性要求；层数不是质量指标。
 
-**核心原则：** 数据经过的每一层都要校验。让这个 bug 在结构上不可能发生。
+目标是行为正确且责任清楚。内部已校验数据沿接口契约使用，普通可逆判断通过小步反馈修正。无需把每个调用者都变成校验器，也无需承诺 bug 在所有情况下“不可能发生”。
 
-## 为什么要多层
+## 先决定谁负责
 
-单点校验："我们修好了这个 bug"
-多层校验："我们让这个 bug 不可能发生"
+| 已知情况 | 最小处理 |
+| --- | --- |
+| 外部输入、反序列化结果或第三方响应进入系统 | 在入口解析和校验，给内部代码明确类型与契约 |
+| 内部调用传递已校验、未失效的数据 | 直接使用契约；修正产生非法状态的源头 |
+| 文件、网络或设备操作确实可能失败 | 由操作所属层返回/传播具体错误，在能作用户决策的位置提示或恢复 |
+| 另一条可达路径绕过入口，或数据经过变更后原校验不再成立 | 在那个新边界补必要检查，说明它独立覆盖的失败 |
+| 涉及权限、资金、删除或其它重要状态变更 | 按具体威胁与不变量决定授权、完整性或原子性保障；不因入口做过格式校验就省略业务授权 |
+| 开发期需要检查内部不变量 | 使用无副作用、可关闭的断言与针对性日志，按运行时模式验证并收尾 |
 
-不同的层捕获不同的情况：
-- 入口校验捕获大多数 bug
-- 业务逻辑捕获边缘情况
-- 环境守卫阻止特定上下文中的危险操作
-- 调试日志在其它层失效时提供帮助
+格式校验、权限判断和业务不变量承担不同职责，有具体依据时可以分层保留。相同空值检查在每层重复，并不自动带来额外保障。
 
-## 四层
+## 增加防御之前
 
-### 第 1 层：入口点校验
-**目的：** 在 API 边界拒绝明显非法的输入
+说清楚：哪条路径会带来什么失败、现有负责层为何处理不了、新动作会改变什么可见行为。能从代码和契约证明的失败可以直接修，不必等实际事故；纯猜测留给下一次有信息量的观测。
 
-```typescript
-function createProject(name: string, workingDirectory: string) {
-  if (!workingDirectory || workingDirectory.trim() === '') {
-    throw new Error('workingDirectory cannot be empty');
-  }
-  if (!existsSync(workingDirectory)) {
-    throw new Error(`workingDirectory does not exist: ${workingDirectory}`);
-  }
-  if (!statSync(workingDirectory).isDirectory()) {
-    throw new Error(`workingDirectory is not a directory: ${workingDirectory}`);
-  }
-  // ... 继续
-}
-```
+- `catch` 放在能恢复、增加必要上下文或向用户报告的位置；其它层正常传播错误。
+- 自动重试只用于明确的暂时性故障，并满足幂等性和有界次数；没有重试契约时清楚报告失败。
+- fallback 和兼容层需要实际产品契约或已知调用者；静默改目录、返回假成功或吞掉异常不是成功处理。
+- 复用现有边界处理，避免先复制校验再证明它们都存在。
 
-### 第 2 层：业务逻辑校验
-**目的：** 确保数据对这个操作来说是有意义的
+## 示例：测试 helper 过早提供空目录
 
-```typescript
-function initializeWorkspace(projectDir: string, sessionId: string) {
-  if (!projectDir) {
-    throw new Error('projectDir required for workspace initialization');
-  }
-  // ... 继续
-}
-```
+已知调用链为 `setup → Project.create → WorkspaceManager → git init`，helper 在初始化之前返回空路径。最小修复是让 helper 仅在初始化后提供有效目录，提前访问则在源头报错。
 
-### 第 3 层：环境守卫
-**目的：** 阻止特定上下文中的危险操作
+若外部入口已校验目录、内部只消费该契约，修复到此即可进入原场景及相关回归验证。无需三个内部函数都再加空值检查，不把只允许测试临时目录的限制写入生产路径。
 
-```typescript
-async function gitInit(directory: string) {
-  // 测试环境里，拒绝在临时目录之外执行 git init
-  if (process.env.NODE_ENV === 'test') {
-    const normalized = normalize(resolve(directory));
-    const tmpDir = normalize(resolve(tmpdir()));
+如果实际发现另外一个入口能传入未经校验的路径，就在那个入口补校验。如果目标路径限制是隔离测试的必要约束，把守卫放在测试执行边界。调查用调用栈日志按需要开关，完成后清理。每项措施都由具体路径决定。
 
-    if (!normalized.startsWith(tmpDir)) {
-      throw new Error(
-        `Refusing git init outside temp dir during tests: ${directory}`
-      );
-    }
-  }
-  // ... 继续
-}
-```
+这段是处理方式示例，不携带某次项目的运行结果。
 
-### 第 4 层：调试埋点
-**目的：** 为事后取证保留上下文
+## 收尾
 
-```typescript
-async function gitInit(directory: string) {
-  const stack = new Error().stack;
-  logger.debug('About to git init', {
-    directory,
-    cwd: process.cwd(),
-    stack,
-  });
-  // ... 继续
-}
-```
-
-## 套用这个模式
-
-发现一个 bug 时：
-
-1. **追踪数据流** —— 坏值是从哪里产生的？用在了哪里？
-2. **标出所有检查点** —— 列出数据经过的每一个点
-3. **在每一层加校验** —— 入口、业务、环境、调试
-4. **逐层测试** —— 试着绕过第 1 层，确认第 2 层能拦住
-
-## 会话中的示例
-
-Bug：空的 `projectDir` 导致在源码目录里执行了 `git init`
-
-**数据流：**
-1. 测试 setup → 空字符串
-2. `Project.create(name, '')`
-3. `WorkspaceManager.createWorkspace('')`
-4. `git init` 在 `process.cwd()` 里执行
-
-**加上的四层：**
-- 第 1 层：`Project.create()` 校验非空/存在/可写
-- 第 2 层：`WorkspaceManager` 校验 projectDir 非空
-- 第 3 层：`WorktreeManager` 在测试中拒绝在 tmpdir 之外执行 git init
-- 第 4 层：git init 之前记录调用栈
-
-**结果：** 全部 1847 个测试通过，bug 无法复现
-
-## 关键洞见
-
-四层都是必需的。测试过程中，每一层都抓住了其它层漏掉的 bug：
-- 不同的代码路径绕过了入口校验
-- mock 绕过了业务逻辑检查
-- 不同平台上的边缘情况需要环境守卫
-- 调试日志暴露了结构性的误用
-
-**不要只在一个校验点上停下。** 每一层都要加检查。
+按所选开发模式验证根因修复、受影响边界和项目必需回归；已有有效记录直接核对。约定验收满足就明确完成，不为“防弹”继续补层。若反馈暴露新路径，针对它修正；这是一轮新的具体问题，而不是原先必须猜中的免责清单。

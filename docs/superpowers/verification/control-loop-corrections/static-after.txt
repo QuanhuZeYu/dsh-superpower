@@ -1,0 +1,61 @@
+=== 中文化比例（低于 0.35 需关注）===
+0.38    3701  skills/requesting-code-review/code-reviewer.md
+0.66    2944  skills/using-superpowers/references/dsh-tools.md
+0.70    1251  skills/diagnosing-superpowers/templates/report.md
+0.72   19158  skills/writing-skills/anthropic-best-practices.md
+0.74    5412  skills/finishing-a-development-branch/SKILL.md
+0.75    4223  skills/using-git-worktrees/SKILL.md
+0.76     985  skills/diagnosing-superpowers/prompts/similar-session.md
+0.77    1000  skills/diagnosing-superpowers/references/redaction-policy.md
+0.78    1915  skills/requesting-code-review/SKILL.md
+0.78    1830  skills/writing-skills/persuasion-principles.md
+0.79     739  skills/diagnosing-superpowers/prompts/analyst-common.md
+0.79    2562  skills/subagent-driven-development/re-review-prompt.md
+0.80     806  skills/brainstorming/spec-document-reviewer-prompt.md
+0.81    3007  skills/diagnosing-superpowers/SKILL.md
+0.81    1633  skills/diagnosing-superpowers/templates/bundle-README.md
+0.81    1357  skills/diagnosing-superpowers/templates/case.md
+0.81     265  skills/systematic-debugging/test-academic.md
+0.82     549  skills/diagnosing-superpowers/prompts/scrub-audit.md
+0.82    1912  skills/systematic-debugging/CREATION-LOG.md
+0.83     676  skills/diagnosing-superpowers/prompts/scrub.md
+0.83    1758  skills/using-superpowers/SKILL.md
+0.84    4370  skills/subagent-driven-development/task-reviewer-prompt.md
+0.84    4944  skills/writing-plans/SKILL.md
+0.84   11085  skills/writing-skills/SKILL.md
+0.85     676  skills/diagnosing-superpowers/prompts/skill-timeline.md
+0.85    3614  skills/systematic-debugging/root-cause-tracing.md
+0.86    5458  skills/diagnosing-superpowers/references/session-discovery.md
+0.87    3340  skills/dispatching-parallel-agents/SKILL.md
+0.89     836  skills/systematic-debugging/test-pressure-1.md
+0.90   10549  skills/executing-plans/SKILL.md
+0.90    1130  skills/systematic-debugging/test-pressure-3.md
+0.91   12793  skills/subagent-driven-development/SKILL.md
+0.91    1121  skills/systematic-debugging/test-pressure-2.md
+0.91    7762  skills/test-driven-development/SKILL.md
+0.91    3705  skills/test-driven-development/writing-good-tests.md
+0.91    2382  skills/verification-before-completion/SKILL.md
+0.92     759  skills/diagnosing-superpowers/prompts/cost-and-time.md
+0.93     687  skills/diagnosing-superpowers/prompts/plan-adherence.md
+0.93    2916  skills/receiving-code-review/SKILL.md
+0.94    2093  skills/writing-skills/testing-skills-with-subagents.md
+0.95    7466  skills/brainstorming/SKILL.md
+0.95    5037  skills/systematic-debugging/SKILL.md
+0.95     792  skills/writing-plans/plan-document-reviewer-prompt.md
+0.96     585  skills/diagnosing-superpowers/prompts/quality-evidence.md
+0.96     833  skills/diagnosing-superpowers/references/context-safety.md
+0.97    2918  skills/runtime-driven-development/SKILL.md
+0.97    1330  skills/systematic-debugging/defense-in-depth.md
+0.98    2731  skills/control-loop/SKILL.md
+0.98     394  skills/diagnosing-superpowers/prompts/request-conflicts.md
+0.98     573  skills/diagnosing-superpowers/prompts/stumbles.md
+0.98    2345  skills/systematic-debugging/condition-based-waiting.md
+0.98    1801  skills/writing-skills/examples/AGENTS_MD_TESTING.md
+1.00     728  skills/diagnosing-superpowers/prompts/repeated-work.md
+1.00    3220  skills/subagent-driven-development/implementer-prompt.md
+
+文件总数 63 | 错误 0 | 警告 2
+
+[警告]
+  ! skills/using-superpowers/references/dsh-tools.md: 残留 Claude Task 工具, Claude Code
+  ! skills/writing-skills/anthropic-best-practices.md: 残留 Anthropic

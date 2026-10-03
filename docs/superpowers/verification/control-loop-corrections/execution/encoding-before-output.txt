@@ -1,0 +1,5 @@
+{
+  "code": 1,
+  "stdout": "",
+  "stderr": "...F\r\n======================================================================\r\nFAIL: test_real_wrapper_under_legacy_encoding (__main__.TaskStartContract.test_real_wrapper_under_legacy_encoding)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"D:\\Code\\dsh-plugins\\dsh-superpower\\docs\\superpowers\\verification\\control-loop-corrections\\execution\\test_task_start.py\", line 33, in test_real_wrapper_under_legacy_encoding\r\n    self.assertEqual(actual.returncode, 0, stderr)\r\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError: 1 != 0 : task-brief.py 没有报告简报路径：??д?? C:\\Windows\\Temp\\tmp3mq4_4oq\\.superpowers\\sdd\\plan file\\task-1-brief.md??2 ??\r\r\n\r\n\r\n----------------------------------------------------------------------\r\nRan 4 tests in 0.331s\r\n\r\nFAILED (failures=1)\r\n"
+}

@@ -1,0 +1,5 @@
+{
+  "code": 1,
+  "stdout": "",
+  "stderr": ".F\r\n======================================================================\r\nFAIL: test_real_brief_output_with_spaces (__main__.TaskStartContract.test_real_brief_output_with_spaces)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"D:\\Code\\dsh-plugins\\dsh-superpower\\docs\\superpowers\\verification\\control-loop-corrections\\execution\\test_task_start.py\", line 38, in test_real_brief_output_with_spaces\r\n    self.assertEqual(result, 0, errors.getvalue())\r\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError: 1 != 0 : task-brief.py 没有报告简报路径：已写入 C:\\Windows\\Temp\\tmpri4_xdmq\\task brief.md：2 行\r\n\r\n\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.049s\r\n\r\nFAILED (failures=1)\r\n"
+}

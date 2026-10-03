@@ -1,0 +1,26 @@
+ M README.md
+ M skills/brainstorming/SKILL.md
+ M skills/control-loop/SKILL.md
+ M skills/executing-plans/SKILL.md
+ M skills/executing-plans/scripts/task-start.py
+ M skills/finishing-a-development-branch/SKILL.md
+ M skills/receiving-code-review/SKILL.md
+ M skills/requesting-code-review/SKILL.md
+ M skills/requesting-code-review/code-reviewer.md
+ M skills/subagent-driven-development/SKILL.md
+ M skills/subagent-driven-development/implementer-prompt.md
+ M skills/subagent-driven-development/re-review-prompt.md
+ M skills/subagent-driven-development/task-reviewer-prompt.md
+ M skills/systematic-debugging/SKILL.md
+ M skills/systematic-debugging/defense-in-depth.md
+ M skills/systematic-debugging/root-cause-tracing.md
+ M skills/test-driven-development/SKILL.md
+ M skills/using-superpowers/SKILL.md
+ M skills/verification-before-completion/SKILL.md
+ M skills/writing-plans/SKILL.md
+ M skills/writing-skills/SKILL.md
+ M skills/writing-skills/examples/AGENTS_MD_TESTING.md
+ M skills/writing-skills/persuasion-principles.md
+ M skills/writing-skills/testing-skills-with-subagents.md
+?? docs/
+?? skills/runtime-driven-development/

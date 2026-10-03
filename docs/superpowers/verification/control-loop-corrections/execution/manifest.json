@@ -1,0 +1,67 @@
+{
+  "files": [
+    "subagent-driven-development/scripts/sdd-workspace.py",
+    "subagent-driven-development/scripts/task-brief.py",
+    "subagent-driven-development/scripts/review-package.py",
+    "subagent-driven-development/re-review-prompt.md",
+    "subagent-driven-development/SKILL.md",
+    "subagent-driven-development/task-reviewer-prompt.md",
+    "subagent-driven-development/implementer-prompt.md",
+    "executing-plans/scripts/task-start.py",
+    "executing-plans/scripts/task-done.py",
+    "executing-plans/SKILL.md",
+    "requesting-code-review/SKILL.md",
+    "requesting-code-review/code-reviewer.md"
+  ],
+  "mode": "普通 subagent 后台，继承默认模型；前后独立上下文，提示相同，仅 guidance 快照变化",
+  "snapshots": [
+    {
+      "file": "subagent-driven-development/scripts/sdd-workspace.py",
+      "sha256": "afba116052202aa7ac2f5e2d2efa2701199a9f47255501e40ea16225514e6372"
+    },
+    {
+      "file": "subagent-driven-development/scripts/task-brief.py",
+      "sha256": "01010789d42163073e9b4033ff6671e4fadb9bf8ed6370fdb48adfe10c8c05a6"
+    },
+    {
+      "file": "subagent-driven-development/scripts/review-package.py",
+      "sha256": "819b4cd32f817dc6c189125ea82153d684279aef0ddec1c0bb1fd6819e686688"
+    },
+    {
+      "file": "subagent-driven-development/re-review-prompt.md",
+      "sha256": "190f80221edaaeedb4b89454bd9814b08ecd7165492235851309f8359c3ebfc3"
+    },
+    {
+      "file": "subagent-driven-development/SKILL.md",
+      "sha256": "833fa16847ca630df9563fdd1a92d932b88b14fac2d46ee2cd893017a7c7c555"
+    },
+    {
+      "file": "subagent-driven-development/task-reviewer-prompt.md",
+      "sha256": "442f54005d66f57ac89cc0a390e90e58a9778c7ae943281ec947d98aa4e1cae1"
+    },
+    {
+      "file": "subagent-driven-development/implementer-prompt.md",
+      "sha256": "4503dea7546de1c28a1c0e4a0d25e9f5382627aa31c772371247a13f610805a1"
+    },
+    {
+      "file": "executing-plans/scripts/task-start.py",
+      "sha256": "6b6355275173402fef21a81fa14732fd75b0b2dab435fb34096c80cf65268dd0"
+    },
+    {
+      "file": "executing-plans/scripts/task-done.py",
+      "sha256": "8ba3d51acf721a0555973800c10ec86f7c3a83bf527971c2a569428f3bd5de29"
+    },
+    {
+      "file": "executing-plans/SKILL.md",
+      "sha256": "a702a561f70c51e5e0cc3c57c9427e5541c8724210300723b9cbf61485e41742"
+    },
+    {
+      "file": "requesting-code-review/SKILL.md",
+      "sha256": "cc80ca3bd6723d029ec31fb5bf2f8bae8fe1385e208964a0e2530a26624ff2d7"
+    },
+    {
+      "file": "requesting-code-review/code-reviewer.md",
+      "sha256": "7d8fbd5a9b2aa71ad1075b34ee7b59303e3a53a81fba684d45d3ed8e012fc15c"
+    }
+  ]
+}

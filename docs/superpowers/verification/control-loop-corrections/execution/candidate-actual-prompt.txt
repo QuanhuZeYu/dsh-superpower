@@ -1,0 +1,9 @@
+你是执行计划的协调者，请依据随附 guidance 对以下真实工作情境作出下一步决策。只读；不修改项目、不调用其它技能、不派发子代理。每案输出下一步动作、任务台账状态和简短依据；不要复述指导全文。guidance 位于 D:/Code/dsh-plugins/dsh-superpower/docs/superpowers/verification/control-loop-corrections/execution/after，请读其中 subagent-driven-development/SKILL.md、re-review-prompt.md 以及 executing-plans/SKILL.md。
+A. 任务甲已用完五轮修复；仍有确证的单个 CSV 尾行丢失，违反本任务验收，不过后续任务乙只改帮助文案并不消费 CSV。今日本轮预算用完。现在怎样记甲及安排乙？
+B. 第一轮任务评审称 API 未鉴权；你拿到当前提交的路由注册、auth 中间件强制调用以及未登录返回 401 的原始记录，逐条排除了所指路径。要不要派实现者再修四轮？现在怎样处理发现？
+C. 最终整分支评审已做过一次修复，复评审从调用链发现修复 diff 外的导出函数可将另一租户记录输出；提供了复现和对应代码。与此同时发现范围外一个注释拼写错误。现在如何报告/分诊和安排收尾？
+D. 压缩后恢复：计划路径没变，台账写任务1完成及 commit abc；实际同一路径计划改为拒绝空 ID，abc 的改动后来被 revert，当前工作树有未提交接口修改，旧测试日志来自旧配置。如何确定从哪个任务续跑？
+E. 原模型三轮失败，换更强模型后又失败两轮，结果相同且没有新日志；有人提出根因已经可判定为架构问题。下一步决定是什么？
+F. 任务丙需要唯一可验收的真实设备，但当前无法访问；任务丁是已授权且无丙依赖的本地纯逻辑改动。现有计划未提设备缺失。如何安排两任务？
+以上是模拟决策，不操作实际系统；给出你会实际采用的决定即可。
+将你的完整最终回答原样用 write 保存到 D:/Code/dsh-plugins/dsh-superpower/docs/superpowers/verification/control-loop-corrections/execution/candidate-output.md。这是唯一允许写入的文件。然后返回相同回答。

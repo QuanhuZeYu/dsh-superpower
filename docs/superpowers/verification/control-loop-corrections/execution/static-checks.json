@@ -1,0 +1,98 @@
+{
+  "snapshotMatchesCurrent": true,
+  "files": [
+    {
+      "file": "subagent-driven-development/scripts/sdd-workspace.py",
+      "changed": false,
+      "beforeLines": 107,
+      "afterLines": 107,
+      "sha256": "afba116052202aa7ac2f5e2d2efa2701199a9f47255501e40ea16225514e6372"
+    },
+    {
+      "file": "subagent-driven-development/scripts/task-brief.py",
+      "changed": false,
+      "beforeLines": 92,
+      "afterLines": 92,
+      "sha256": "01010789d42163073e9b4033ff6671e4fadb9bf8ed6370fdb48adfe10c8c05a6"
+    },
+    {
+      "file": "subagent-driven-development/scripts/review-package.py",
+      "changed": false,
+      "beforeLines": 119,
+      "afterLines": 119,
+      "sha256": "819b4cd32f817dc6c189125ea82153d684279aef0ddec1c0bb1fd6819e686688"
+    },
+    {
+      "file": "subagent-driven-development/re-review-prompt.md",
+      "changed": true,
+      "beforeLines": 106,
+      "afterLines": 107,
+      "sha256": "1637cf6141c9ae675fcbfea2cca2070bac26ab31b0c6d7cd9b4d96ac178640b4"
+    },
+    {
+      "file": "subagent-driven-development/SKILL.md",
+      "changed": true,
+      "beforeLines": 423,
+      "afterLines": 350,
+      "sha256": "e1c5e5f0e7cc51c8b6bf885e011fe218bc60ea6ce0a3db7ca6fde30d97919fa9"
+    },
+    {
+      "file": "subagent-driven-development/task-reviewer-prompt.md",
+      "changed": true,
+      "beforeLines": 191,
+      "afterLines": 192,
+      "sha256": "cf598819b5287787053307d309d09cd505b700e9f839712ac0f771ff95180073"
+    },
+    {
+      "file": "subagent-driven-development/implementer-prompt.md",
+      "changed": true,
+      "beforeLines": 137,
+      "afterLines": 139,
+      "sha256": "7422b2b7ca1dfa5087371785b7a15e878f8dc688a98192e0832b69f96b175e14"
+    },
+    {
+      "file": "executing-plans/scripts/task-start.py",
+      "changed": true,
+      "beforeLines": 77,
+      "afterLines": 77,
+      "sha256": "5c4af56ac2118ba1982d37b7e0854a29385b31343352760b0a84a55e145f6996"
+    },
+    {
+      "file": "executing-plans/scripts/task-done.py",
+      "changed": false,
+      "beforeLines": 156,
+      "afterLines": 156,
+      "sha256": "8ba3d51acf721a0555973800c10ec86f7c3a83bf527971c2a569428f3bd5de29"
+    },
+    {
+      "file": "executing-plans/SKILL.md",
+      "changed": true,
+      "beforeLines": 308,
+      "afterLines": 297,
+      "sha256": "142c23efc5c476b911aeecc86d00c06765a5a90f6d5e4f462b365782496ea745"
+    },
+    {
+      "file": "requesting-code-review/SKILL.md",
+      "changed": true,
+      "beforeLines": 101,
+      "afterLines": 103,
+      "sha256": "ea461ff11ec1fcc9b2d0977991c40459d5f6e3fa899366f3e137616eb77db950"
+    },
+    {
+      "file": "requesting-code-review/code-reviewer.md",
+      "changed": true,
+      "beforeLines": 196,
+      "afterLines": 196,
+      "sha256": "288cb9ff0d5d4aaf0c9485857a72480d1d5fa39b09b9cd16feeaff32bc37cd38"
+    }
+  ],
+  "checks": [
+    "检索旧版四类暂停、仅上限裁定、范围外自动降级、最终轮无条件结束等字面残留；无肯定式旧契约命中",
+    "人工核对流程图完成出口以验收为条件，预算/能力不足走未完成分支",
+    "保留工作区定位与task-done脚本；恢复调用方不把路径或完成行作为跳过充分条件"
+  ],
+  "limits": [
+    "未运行实际项目端到端计划恢复",
+    "未执行完整仓库自动化测试套件，仓库没有独立tests目录；已发现的生产脚本输出契约以本目录真实生产CLI回归验证"
+  ]
+}

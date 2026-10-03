@@ -1,0 +1,41 @@
+{
+  "checks": [
+    {
+      "file": "SKILL.md",
+      "completeRead": true,
+      "finalSnapshotMatches": true,
+      "fencesBalanced": true,
+      "extremeMandatesAbsent": true
+    },
+    {
+      "file": "testing-skills-with-subagents.md",
+      "completeRead": true,
+      "finalSnapshotMatches": true,
+      "fencesBalanced": true,
+      "extremeMandatesAbsent": true
+    },
+    {
+      "file": "examples/AGENTS_MD_TESTING.md",
+      "completeRead": true,
+      "finalSnapshotMatches": true,
+      "fencesBalanced": true,
+      "extremeMandatesAbsent": true
+    },
+    {
+      "file": "persuasion-principles.md",
+      "completeRead": true,
+      "finalSnapshotMatches": true,
+      "fencesBalanced": true,
+      "extremeMandatesAbsent": true
+    }
+  ],
+  "scope": "最终四文静态复核；独立行为复测只覆盖 after 中三文",
+  "reviewFollowup": {
+    "source": "父层独立评审 c810",
+    "unsupportedSubagentClaimAbsent": true,
+    "conditionalCrossReferencePresent": true,
+    "finalSnapshotMatches": true,
+    "fencesBalanced": true,
+    "behaviorRetested": false
+  }
+}

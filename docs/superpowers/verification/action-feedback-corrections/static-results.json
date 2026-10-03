@@ -1,0 +1,52 @@
+[
+  {
+    "file": "control-loop/SKILL.md",
+    "changed": true,
+    "balancedFences": true
+  },
+  {
+    "file": "using-superpowers/SKILL.md",
+    "changed": true,
+    "balancedFences": true
+  },
+  {
+    "file": "executing-plans/SKILL.md",
+    "changed": true,
+    "balancedFences": true
+  },
+  {
+    "file": "subagent-driven-development/SKILL.md",
+    "changed": true,
+    "balancedFences": true
+  },
+  {
+    "file": "subagent-driven-development/implementer-prompt.md",
+    "changed": true,
+    "balancedFences": true
+  },
+  {
+    "file": "systematic-debugging/SKILL.md",
+    "changed": true,
+    "balancedFences": true
+  },
+  {
+    "file": "verification-before-completion/SKILL.md",
+    "changed": true,
+    "balancedFences": true
+  },
+  {
+    "file": "writing-skills/SKILL.md",
+    "changed": true,
+    "balancedFences": true
+  },
+  {
+    "file": "writing-skills/testing-skills-with-subagents.md",
+    "changed": true,
+    "balancedFences": true
+  },
+  {
+    "file": "runtime-driven-development/SKILL.md",
+    "changed": true,
+    "balancedFences": true
+  }
+]
