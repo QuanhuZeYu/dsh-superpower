@@ -81,7 +81,7 @@ Superpowers 的核心哲学是控制论。技能是可调整的控制策略，�
 | --- | --- |
 | `using-superpowers` | 按当前任务与证据选择所需技能 |
 | `brainstorming`、`writing-plans` | 把意图变成验收标准，规划可验证的小步 |
-| `test-driven-development` | 稳定契约下，失败测试与最小实现之间的局部反馈 |
+| `test-driven-development` | 稳定契约下，最小真实路径、必要反例与修正回归的局部反馈 |
 | `runtime-driven-development` | 日志探针、开发期断言与目标实例实测之间的反馈 |
 | `systematic-debugging` | 用实验区分根因假设 |
 | `verification-before-completion` | 核查完成结论的证据与适用范围 |
